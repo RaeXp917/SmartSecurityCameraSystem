@@ -1,66 +1,55 @@
-Smart Security Camera System
+# Smart Security Camera System
 
-Disclaimer
+A Java-based intelligent security camera system with face recognition, body detection, and web-based monitoring capabilities.
 
-This project is provided “as is” without any warranties of any kind,
-either express or implied.
-The authors and contributors are not responsible for any misuse, data
-loss, security breaches, or legal issues that may arise from the use of
-this system.
+### ⚠️ Disclaimer
 
-By using this software, you agree that: - You are solely responsible for
-configuring and securing your own deployment.
-- You are responsible for complying with all applicable privacy,
-surveillance, and data protection laws in your country.
-- The maintainers of this repository do not provide any guarantees
-regarding data safety, uptime, or suitability for production
-environments.
+This project is provided “as is” without any warranties of any kind, either express or implied. The authors and contributors are not responsible for any misuse, data loss, security breaches, or legal issues that may arise from the use of this system.
 
-A Java-based intelligent security camera system with face recognition,
-body detection, and web-based monitoring capabilities.
+By using this software, you agree that:
+- You are solely responsible for configuring and securing your own deployment.
+- You are responsible for complying with all applicable privacy, surveillance, and data protection laws in your country.
+- The maintainers of this repository do not provide any guarantees regarding data safety, uptime, or suitability for production environments.
 
-Features
+## Features
 
--   Real-time Face Recognition: Identify known individuals using LBPH
-    algorithm
--   Body Detection: Detect human bodies in camera feeds
--   Web Interface: Monitor your camera feeds from any device via a web interface
-    browser
--   Video Recording: Automatic recording of security events
--   User Management: Add/remove authorized users with role-based access
--   Height Profiling: Advanced biometric identification using height
-    analysis
--   Multi-camera Support: Webcam and IP camera support
--   Database Logging: PostgreSQL-based event logging and user management
+-   **Real-time Face Recognition**: Identify known individuals using LBPH algorithm
+-   **Body Detection**: Detect human bodies in camera feeds
+-   **Web Interface**: Monitor your camera feeds from any device via a web browser
+-   **Video Recording**: Automatic recording of security events
+-   **User Management**: Add/remove authorized users with role-based access
+-   **Height Profiling**: Advanced biometric identification using height analysis
+-   **Multi-camera Support**: Webcam and IP camera support
+-   **Database Logging**: PostgreSQL-based event logging and user management
 
-Technology Stack
+## Technology Stack
 
--   Backend: Java 21 + JavaFX + OpenCV
--   Web Server: Ktor (Kotlin)
--   Database: PostgreSQL
--   Face Recognition: OpenCV LBPH
--   Build System: Gradle
--   Computer Vision: JavaCV + OpenCV
+-   **Backend**: Java 21 + JavaFX + OpenCV
+-   **Web Server**: Ktor (Kotlin)
+-   **Database**: PostgreSQL
+-   **Face Recognition**: OpenCV LBPH
+-   **Build System**: Gradle
+-   **Computer Vision**: JavaCV + OpenCV
 
-Prerequisites
+## Prerequisites
 
 -   Java 21 or higher
 -   PostgreSQL database
 -   Webcam or IP camera
 -   Gradle 8.0+
 
-Quick Start
+## Quick Start
 
-1. Clone the Repository
+### 1. Clone the Repository
 
     git clone <your-repo-url>
     cd SmartSecurityCamera
 
-2. Set Up Database
+### 2. Set Up Database
 
 Create a PostgreSQL database and set environment variables:
 
-Windows (Command Prompt):
+**Windows (Command Prompt):**
 
     set DB_HOST=localhost
     set DB_PORT=5432
@@ -68,7 +57,7 @@ Windows (Command Prompt):
     set DB_USER=your_username
     set DB_PASSWORD=your_password
 
-Windows (PowerShell):
+**Windows (PowerShell):**
 
     $env:DB_HOST="localhost"
     $env:DB_PORT="5432"
@@ -76,7 +65,7 @@ Windows (PowerShell):
     $env:DB_USER="your_username"
     $env:DB_PASSWORD="your_password"
 
-Linux:
+**Linux:**
 
     export DB_HOST=localhost
     export DB_PORT=5432
@@ -84,30 +73,30 @@ Linux:
     export DB_USER=your_username
     export DB_PASSWORD=your_password
 
-3. Build and Run
+### 3. Build and Run
 
-Windows:
+**Windows:**
 
     gradlew.bat build
     gradlew.bat run
 
-Linux:
+**Linux:**
 
     ./gradlew build
     ./gradlew run
 
-4. Add Training Data
+### 4. Add Training Data
 
-1.  Navigate to the training-data/ directory
-2.  Create role-based folders (e.g., Owner/, Family/, Employee)
-3.  Add person folders with their photos (e.g., Owner/John/photo1.jpg)
-4.  Restart the application to train the model
+1.  Navigate to the `training-data/` directory.
+2.  Create role-based folders (e.g., `Owner/`, `Family/`, `Employee`).
+3.  Add person folders with their photos (e.g., `Owner/John/photo1.jpg`).
+4.  Restart the application to train the model.
 
-5. Access Web Interface
+### 5. Access Web Interface
 
-Open your browser and navigate to http://localhost:8080
+Open your browser and navigate to `http://localhost:8080`
 
-Project Structure
+## Project Structure
 
     SmartSecurityCamera/
     ├── src/main/java/org/example/
@@ -131,46 +120,50 @@ Project Structure
     ├── recordings/           # Security event recordings
     └── config.properties     # Application configuration
 
-Configuration
+## Configuration
 
-Camera Settings
+### Camera Settings
 
-Edit config.properties:
+Edit `config.properties`:
 
     camera.type=WEBCAM
     ip.camera.url=rtsp://username:password@192.168.1.100:554/stream
 
-Database Configuration
+### Database Configuration
 
-Set environment variables for database connection: - DB_HOST: Database
-host (default: localhost) - DB_PORT: Database port (default: 5432) -
-DB_NAME: Database name (default: security_camera_db) - DB_USER: Database
-username (default: postgres) - DB_PASSWORD: Database password
+Set environment variables for database connection:
+- `DB_HOST`: Database host (default: `localhost`)
+- `DB_PORT`: Database port (default: `5432`)
+- `DB_NAME`: Database name (default: `security_camera_db`)
+- `DB_USER`: Database username (default: `postgres`)
+- `DB_PASSWORD`: Database password
 
-Security Features
+## Security Features
 
--   Face Recognition: LBPH algorithm for reliable identification
--   Height Profiling: Additional biometric verification
--   Event Logging: Comprehensive audit trail
--   Role-based Access: Different permission levels for users
--   Secure Database: PostgreSQL with proper authentication
+-   **Face Recognition**: LBPH algorithm for reliable identification
+-   **Height Profiling**: Additional biometric verification
+-   **Event Logging**: Comprehensive audit trail
+-   **Role-based Access**: Different permission levels for users
+-   **Secure Database**: PostgreSQL with proper authentication
 
-Web Interface
+## Web Interface
 
-The system provides a web-based dashboard accessible at
-http://localhost:8080: - Live camera feed - Real-time event monitoring -
-User management interface - System status indicators
+The system provides a web-based dashboard accessible at `http://localhost:8080`:
+- Live camera feed
+- Real-time event monitoring
+- User management interface
+- System status indicators
 
-Training Data Management
+## Training Data Management
 
-Adding New Users
+### Adding New Users
 
-1.  Use the application’s UI to add users
-2.  Capture training photos through the camera
-3.  Photos are automatically saved to training-data/[Role]/[Name]/
-4.  The system retrains automatically after adding new photos
+1.  Use the application’s UI to add users.
+2.  Capture training photos through the camera.
+3.  Photos are automatically saved to `training-data/[Role]/[Name]/`.
+4.  The system retrains automatically after adding new photos.
 
-Photo Requirements
+### Photo Requirements
 
 -   Clear, front-facing photos
 -   Good lighting conditions
@@ -178,73 +171,69 @@ Photo Requirements
 -   Recommended: 10-20 photos per person
 -   JPG format preferred
 
-Recording Features
+## Recording Features
 
--   Automatic Recording: Records when unknown faces are detected
--   Event-based Storage: Saves recordings to recordings/ directory
--   Configurable Duration: Adjustable recording length
--   Storage Management: Automatic cleanup of old recordings
+-   **Automatic Recording**: Records when unknown faces are detected.
+-   **Event-based Storage**: Saves recordings to `recordings/` directory.
+-   **Configurable Duration**: Adjustable recording length.
+-   **Storage Management**: Automatic cleanup of old recordings.
 
-Troubleshooting
+## Troubleshooting
 
-Common Issues
+### Common Issues
 
-1.  Camera Not Detected
-    -   Check camera permissions
-    -   Verify camera index in settings
-    -   Test with different camera devices
-2.  Face Recognition Not Working
-    -   Ensure training data is properly structured
-    -   Check photo quality and lighting
-    -   Verify OpenCV cascade files are present
-3.  Database Connection Issues
-    -   Verify PostgreSQL is running
-    -   Check environment variables
-    -   Ensure database exists and is accessible
-4.  Web Interface Not Loading
-    -   Check if the Ktor server is running
-    -   Verify port 8080 is available
-    -   Check firewall settings
-5.  Access Web Interface
+1.  **Camera Not Detected**
+    -   Check camera permissions.
+    -   Verify camera index in settings.
+    -   Test with different camera devices.
+2.  **Face Recognition Not Working**
+    -   Ensure training data is properly structured.
+    -   Check photo quality and lighting.
+    -   Verify OpenCV cascade files are present.
+3.  **Database Connection Issues**
+    -   Verify PostgreSQL is running.
+    -   Check environment variables.
+    -   Ensure database exists and is accessible.
+4.  **Web Interface Not Loading**
+    -   Check if the Ktor server is running.
+    -   Verify port `8080` is available.
+    -   Check firewall settings.
 
--   On the same computer:
-    Open your browser and go to: http://localhost:8080
+### Access Web Interface
 
--   From another device on your local network (phone, tablet, laptop,
-    etc.):
+-   **On the same computer:**
+    Open your browser and go to: `http://localhost:8080`
 
+-   **From another device on your local network (phone, tablet, laptop, etc.):**
     1.  Open Command Prompt (Windows) and run:
 
             ipconfig
 
-    2.  Copy your IPv4 Address (e.g., 192.168.1.40).
-
+    2.  Copy your **IPv4 Address** (e.g., `192.168.1.40`).
     3.  In the browser of the other device, go to:
 
             http://<your-ipv4>:8080
 
-        Example: http://192.168.1.40:8080
+        Example: `http://192.168.1.40:8080`
 
-Contributing
+## Contributing
 
-1.  Fork the repository
-2.  Create a feature branch
-3.  Make your changes
-4.  Add tests if applicable
-5.  Submit a pull request
+1.  Fork the repository.
+2.  Create a feature branch.
+3.  Make your changes.
+4.  Add tests if applicable.
+5.  Submit a pull request.
 
-License
+## License
 
-This project is licensed under the MIT License - see the LICENSE file
-for details.
+This project is licensed under the MIT License - see the `LICENSE` file for details.
 
-Acknowledgments
+## Acknowledgments
 
 -   OpenCV community for computer vision libraries
 -   JavaCV for Java bindings
 -   Ktor team for the web framework
 -   PostgreSQL for the database system
 
-Note: This system is designed for personal and small business use.
-Ensure compliance with local privacy laws and regulations when deploying
-in production environments.
+---
+*Note: This system is designed for personal and small business use. Ensure compliance with local privacy laws and regulations when deploying in production environments.*```
