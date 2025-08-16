@@ -96,30 +96,6 @@ Create a PostgreSQL database and set environment variables:
 
 Open your browser and navigate to `http://localhost:8080`
 
-## Project Structure
-
-    SmartSecurityCamera/
-    ├── src/main/java/org/example/
-    │   ├── camera/           # Camera management
-    │   ├── model/            # Data models
-    │   ├── network/          # Web server and networking
-    │   ├── profile/          # Height profiling
-    │   ├── ui/               # JavaFX user interface
-    │   ├── video/            # Video recording
-    │   ├── AppConfig.java    # Configuration management
-    │   ├── DatabaseService.java      # Database operations
-    │   ├── FaceRecognitionService.java # Face recognition logic
-    │   └── SmartRecognitionApp.java  # Main application
-    ├── src/main/kotlin/org/example/network/
-    │   ├── ServerModule.kt   # Ktor server configuration
-    │   └── WebServer.kt      # Web server implementation
-    ├── src/main/resources/
-    │   ├── static/           # Web interface files
-    │   └── *.xml            # OpenCV cascade files
-    ├── training-data/        # Face recognition training images
-    ├── recordings/           # Security event recordings
-    └── config.properties     # Application configuration
-
 ## Configuration
 
 ### Camera Settings
@@ -194,14 +170,6 @@ The system provides a web-based dashboard accessible at `http://localhost:8080`:
             http://<your-ipv4>:8080
 
         Example: `http://192.168.1.40:8080`
-
-## Contributing
-
-1.  Fork the repository.
-2.  Create a feature branch.
-3.  Make your changes.
-4.  Add tests if applicable.
-5.  Submit a pull request.
 
 ## License
 
