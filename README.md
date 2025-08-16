@@ -1,0 +1,227 @@
+# Smart Security Camera System
+
+A Java-based intelligent security camera system with face recognition, body detection, and web-based monitoring capabilities.
+
+## 🚀 Features
+
+- **Real-time Face Recognition**: Identify known individuals using LBPH algorithm
+- **Body Detection**: Detect human bodies in camera feeds
+- **Web Interface**: Monitor your camera feeds from any device via web browser
+- **Video Recording**: Automatic recording of security events
+- **User Management**: Add/remove authorized users with role-based access
+- **Height Profiling**: Advanced biometric identification using height analysis
+- **Multi-camera Support**: Webcam and IP camera support
+- **Database Logging**: PostgreSQL-based event logging and user management
+
+## 🛠️ Technology Stack
+
+- **Backend**: Java 21 + JavaFX + OpenCV
+- **Web Server**: Ktor (Kotlin)
+- **Database**: PostgreSQL
+- **Face Recognition**: OpenCV LBPH
+- **Build System**: Gradle
+- **Computer Vision**: JavaCV + OpenCV
+
+## 📋 Prerequisites
+
+- Java 21 or higher
+- PostgreSQL database
+- Webcam or IP camera
+- Gradle 8.0+
+
+## 🚀 Quick Start
+
+### 1. Clone the Repository
+```bash
+git clone <your-repo-url>
+cd SmartSecurityCamera
+```
+
+### 2. Set Up Database
+Create a PostgreSQL database and set environment variables:
+
+**Windows (Command Prompt):**
+```cmd
+set DB_HOST=localhost
+set DB_PORT=5432
+set DB_NAME=security_camera_db
+set DB_USER=your_username
+set DB_PASSWORD=your_password
+```
+
+**Windows (PowerShell):**
+```powershell
+$env:DB_HOST="localhost"
+$env:DB_PORT="5432"
+$env:DB_NAME="security_camera_db"
+$env:DB_USER="your_username"
+$env:DB_PASSWORD="your_password"
+```
+
+**Linux:**
+```bash
+export DB_HOST=localhost
+export DB_PORT=5432
+export DB_NAME=security_camera_db
+export DB_USER=your_username
+export DB_PASSWORD=your_password
+```
+
+### 3. Build and Run
+
+**Windows:**
+```cmd
+gradlew.bat build
+gradlew.bat run
+```
+
+**Linux:**
+```bash
+./gradlew build
+./gradlew run
+```
+
+### 4. Add Training Data
+1. Navigate to `training-data/` directory
+2. Create role-based folders (e.g., `Owner/`, `Family/`, `Employee`)
+3. Add person folders with their photos (e.g., `Owner/John/photo1.jpg`)
+4. Restart the application to train the model
+
+### 5. Access Web Interface
+Open your browser and navigate to `http://localhost:8080`
+
+## 📁 Project Structure
+
+```
+SmartSecurityCamera/
+├── src/main/java/org/example/
+│   ├── camera/           # Camera management
+│   ├── model/            # Data models
+│   ├── network/          # Web server and networking
+│   ├── profile/          # Height profiling
+│   ├── ui/               # JavaFX user interface
+│   ├── video/            # Video recording
+│   ├── AppConfig.java    # Configuration management
+│   ├── DatabaseService.java      # Database operations
+│   ├── FaceRecognitionService.java # Face recognition logic
+│   └── SmartRecognitionApp.java  # Main application
+├── src/main/kotlin/org/example/network/
+│   ├── ServerModule.kt   # Ktor server configuration
+│   └── WebServer.kt      # Web server implementation
+├── src/main/resources/
+│   ├── static/           # Web interface files
+│   └── *.xml            # OpenCV cascade files
+├── training-data/        # Face recognition training images
+├── recordings/           # Security event recordings
+└── config.properties     # Application configuration
+```
+
+## ⚙️ Configuration
+
+### Camera Settings
+Edit `config.properties`:
+```properties
+camera.type=WEBCAM
+ip.camera.url=rtsp://username:password@192.168.1.100:554/stream
+```
+
+### Database Configuration
+Set environment variables for database connection:
+- `DB_HOST`: Database host (default: localhost)
+- `DB_PORT`: Database port (default: 5432)
+- `DB_NAME`: Database name (default: security_camera_db)
+- `DB_USER`: Database username (default: postgres)
+- `DB_PASSWORD`: Database password
+
+## 🔐 Security Features
+
+- **Face Recognition**: LBPH algorithm for reliable identification
+- **Height Profiling**: Additional biometric verification
+- **Event Logging**: Comprehensive audit trail
+- **Role-based Access**: Different permission levels for users
+- **Secure Database**: PostgreSQL with proper authentication
+
+## 🌐 Web Interface
+
+The system provides a web-based dashboard accessible at `http://localhost:8080`:
+- Live camera feed
+- Real-time event monitoring
+- User management interface
+- System status indicators
+
+## 📊 Training Data Management
+
+### Adding New Users
+1. Use the application's UI to add users
+2. Capture training photos through the camera
+3. Photos are automatically saved to `training-data/[Role]/[Name]/`
+4. The system retrains automatically after adding new photos
+
+### Photo Requirements
+- Clear, front-facing photos
+- Good lighting conditions
+- Multiple angles and expressions
+- Recommended: 10-20 photos per person
+- JPG format preferred
+
+## 🎥 Recording Features
+
+- **Automatic Recording**: Records when unknown faces are detected
+- **Event-based Storage**: Saves recordings to `recordings/` directory
+- **Configurable Duration**: Adjustable recording length
+- **Storage Management**: Automatic cleanup of old recordings
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+1. **Camera Not Detected**
+   - Check camera permissions
+   - Verify camera index in settings
+   - Test with different camera devices
+
+2. **Face Recognition Not Working**
+   - Ensure training data is properly structured
+   - Check photo quality and lighting
+   - Verify OpenCV cascade files are present
+
+3. **Database Connection Issues**
+   - Verify PostgreSQL is running
+   - Check environment variables
+   - Ensure database exists and is accessible
+
+4. **Web Interface Not Loading**
+   - Check if Ktor server is running
+   - Verify port 8080 is available
+   - Check firewall settings
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- OpenCV community for computer vision libraries
+- JavaCV for Java bindings
+- Ktor team for the web framework
+- PostgreSQL for the database system
+
+## 📞 Support
+
+For issues and questions:
+1. Check the troubleshooting section
+2. Review existing issues
+3. Create a new issue with detailed information
+4. Include system information and error logs
+
+---
+
+**Note**: This system is designed for personal and small business use. Ensure compliance with local privacy laws and regulations when deploying in production environments.

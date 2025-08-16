@@ -1,0 +1,26 @@
+<style>
+    .dashboard-grid { display: flex; flex-wrap: wrap; gap: 1em; }
+    .video-container { flex: 3 1 600px; background-color: #fff; padding: 1em; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .event-container { flex: 1 1 300px; background-color: #fff; padding: 1em; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); max-height: 80vh; overflow-y: auto; }
+    h2 { margin-top: 0; }
+    #live-feed { width: 100%; border-radius: 4px; background-color: #000; }
+    #log-container { font-family: monospace; font-size: 0.9em; }
+    .status-bar { display: flex; align-items: center; gap: 0.5em; }
+    #status-indicator { font-weight: bold; padding: 0.2em 0.5em; border-radius: 4px; }
+    .connected { color: #155724; background-color: #d4edda; }
+    .disconnected { color: #721c24; background-color: #f8d7da; }
+</style>
+
+<div class="dashboard-grid">
+    <div class="video-container">
+        <h2>Live Feed</h2>
+        <img id="live-feed" src="/camera/live.mjpeg" alt="Live camera feed is loading...">
+    </div>
+    <div class="event-container">
+        <div class="status-bar">
+            <h2>Live Events</h2>
+            <span id="status-indicator" class="disconnected"></span>
+        </div>
+        <div id="log-container"></div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+# Smart Security Camera Configuration Template
+# Copy this file to config.properties and customize the values
+
+# Camera type: WEBCAM or IP_CAMERA
+camera.type=WEBCAM
+
+# IP Camera URL (leave empty if using webcam)
+# Example: rtsp://username:password@192.168.1.100:554/stream
+ip.camera.url=
+
+# Database configuration (can be overridden with environment variables)
+# DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD
+# 
+# Example environment variables:
+# export DB_HOST=localhost
+# export DB_PORT=5432
+# export DB_NAME=security_camera_db
+# export DB_USER=your_username
+# export DB_PASSWORD=your_password
