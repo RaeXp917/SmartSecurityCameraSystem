@@ -52,14 +52,6 @@ Create a PostgreSQL database and set environment variables:
     set DB_USER=your_username
     set DB_PASSWORD=your_password
 
-**Windows (PowerShell):**
-
-    $env:DB_HOST="localhost"
-    $env:DB_PORT="5432"
-    $env:DB_NAME="security_camera_db"
-    $env:DB_USER="your_username"
-    $env:DB_PASSWORD="your_password"
-
 **Linux:**
 
     export DB_HOST=localhost
