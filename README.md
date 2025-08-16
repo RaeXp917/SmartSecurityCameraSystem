@@ -162,12 +162,5 @@ The system provides a web-based dashboard accessible at `http://localhost:8080`:
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
 
-## Acknowledgments
-
--   OpenCV community for computer vision libraries
--   JavaCV for Java bindings
--   Ktor team for the web framework
--   PostgreSQL for the database system
-
 ---
 *Note: This system is designed for personal and small business use. Ensure compliance with local privacy laws and regulations when deploying in production environments.*```
