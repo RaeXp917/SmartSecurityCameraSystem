@@ -40,12 +40,7 @@ By using this software, you agree that:
 
 ## Quick Start
 
-### 1. Clone the Repository
-
-    git clone <your-repo-url>
-    cd SmartSecurityCamera
-
-### 2. Set Up Database
+### 1. Set Up Database
 
 Create a PostgreSQL database and set environment variables:
 
@@ -73,7 +68,7 @@ Create a PostgreSQL database and set environment variables:
     export DB_USER=your_username
     export DB_PASSWORD=your_password
 
-### 3. Build and Run
+### 2. Build and Run
 
 **Windows:**
 
@@ -85,14 +80,14 @@ Create a PostgreSQL database and set environment variables:
     ./gradlew build
     ./gradlew run
 
-### 4. Add Training Data
+### 3. Add Training Data
 
 1.  Navigate to the `training-data/` directory.
 2.  Create role-based folders (e.g., `Owner/`, `Family/`, `Employee`).
 3.  Add person folders with their photos (e.g., `Owner/John/photo1.jpg`).
 4.  Restart the application to train the model.
 
-### 5. Access Web Interface
+### 4. Access Web Interface
 
 Open your browser and navigate to `http://localhost:8080`
 
