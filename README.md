@@ -178,27 +178,6 @@ The system provides a web-based dashboard accessible at `http://localhost:8080`:
 -   **Configurable Duration**: Adjustable recording length.
 -   **Storage Management**: Automatic cleanup of old recordings.
 
-## Troubleshooting
-
-### Common Issues
-
-1.  **Camera Not Detected**
-    -   Check camera permissions.
-    -   Verify camera index in settings.
-    -   Test with different camera devices.
-2.  **Face Recognition Not Working**
-    -   Ensure training data is properly structured.
-    -   Check photo quality and lighting.
-    -   Verify OpenCV cascade files are present.
-3.  **Database Connection Issues**
-    -   Verify PostgreSQL is running.
-    -   Check environment variables.
-    -   Ensure database exists and is accessible.
-4.  **Web Interface Not Loading**
-    -   Check if the Ktor server is running.
-    -   Verify port `8080` is available.
-    -   Check firewall settings.
-
 ### Access Web Interface
 
 -   **On the same computer:**
